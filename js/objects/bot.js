@@ -1,3 +1,5 @@
+import { OrderStatus } from "../enums/orderStatus.js";
+
 export class Bot {
     constructor(id, system) {
         this.id = id;
@@ -8,10 +10,34 @@ export class Bot {
     }
 
     assignOrder(order) {
+        if (!this.isBusy) {
+            this.isBusy = true;
+            this.order = order;
+            order.status = OrderStatus.PROCESSING;
 
+            const timeOut = 10000; //10 secs
+            this.timer = setTimeout(() => {
+                order.status = OrderStatus.COMPLETE;
+                this.isBusy = false;
+                this.timer = null;
+                this.order = null;
+
+                // need to reset dom
+                this.system.render();
+                this.system.assignOrders();
+            }, timeOut);
+        }
     }
 
     destroy() {
-
+        if (this.timer) {
+            clearTimeout(this.timer);
+            if (this.order) {
+                // processing order change to pending when bot is removed
+                this.order.status = OrderStatus.PENDING;
+            }
+            this.busy = false;
+            this.order = null;
+        }
     }
 }
