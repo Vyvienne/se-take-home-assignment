@@ -1,0 +1,94 @@
+html,
+body,
+h4 {
+    background: #944D00;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+}
+
+#system-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#pending,
+#complete,
+#bots {
+    background: #A7A7A7;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    min-height: 250px;
+    min-width: 190px;
+    max-height: 250px;
+    max-width: 190px;
+    /* prevent overflow */
+    overflow-y: auto;
+}
+
+#add-normal-order,
+#add-vip-order,
+#add-bot,
+#remove-bot {
+    background: #6BB2FF;
+    color: white;
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 5px;
+    min-height: 30px;
+    min-width: 190px;
+    border-radius: 10px;
+}
+
+#add-normal-order:hover,
+#add-vip-order:hover,
+#add-bot:hover,
+#remove-bot:hover {
+    background: #1f3e8e;
+}
+
+.order,
+.bot {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-height: 50px;
+    max-width: 170px;
+    text-align: center;
+}
+
+.order.pending {
+    background: #D9D9D9;
+    color: black;
+}
+
+.order.processing {
+    background: #FFFF00;
+    color: black;
+}
+
+.order.completed {
+    background: #00FF5E;
+    color: black;
+}
+
+.bot.busy {
+    background: #FF0000;
+    color: black;
+}
+
+.bot.idle {
+    background: #FF7300;
+    color: black;
+}

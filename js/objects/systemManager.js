@@ -18,32 +18,44 @@ export class SystemManager {
             return;
         }
 
-        pendingArea.innerHTML = "<h2>PENDING AREA</h2>";
-        completedArea.innerHTML = "<h2>COMPLETED ORDERS</h2>";
-        botsArea.innerHTML = "<h2>AVAILABLE BOTS</h2>";
+        // have to keep this to prevent duplicated items in the areas
+        pendingArea.innerHTML = "";
+        completedArea.innerHTML = "";
+        botsArea.innerHTML = "";
 
         this.orders.forEach(o => {
             const element = document.createElement("div");
             element.className = "order";
             element.textContent = `${o.type} ORDER #${o.id}`
             if (o.status === OrderStatus.PENDING) {
+                element.classList.add("pending");
                 element.textContent += ' (PENDING)';
                 pendingArea.appendChild(element);
             }
             else if (o.status === OrderStatus.PROCESSING) {
+                element.classList.add("processing");
                 element.textContent += ' (PROCESSING)';
                 pendingArea.appendChild(element);
             }
             else {
+                element.classList.add("completed");
                 element.textContent += ' (COMPLETED)';
-                completedArea.appendChild(element);
+                completedArea.prepend(element);
             }
         });
 
         this.bots.forEach(b => {
             const element = document.createElement("div");
             element.className = "bot";
-            element.textContent = `BOT #${b.id} (${b.isBusy ? "BUSY" : "IDLE"})`;
+            if (b.isBusy) {
+                element.classList.add("busy");
+                element.textContent = `BOT #${b.id} (BUSY)`;
+            }
+            else {
+                element.classList.add("idle");
+                element.textContent = `BOT #${b.id} (IDLE)`;
+            }
+
             botsArea.appendChild(element);
         });
     }

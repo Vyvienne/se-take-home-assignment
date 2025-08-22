@@ -2,26 +2,48 @@
 
 <head>
     <title>CookingBot Order System</title>
-    <link rel="style" href="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <!-- Mobile mode -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-    <h1>COOKINGBOT ORDER SYSTEM</h1>
-    <button id="add-normal-order">NEW NORMAL ORDER</button>
-    <button id="add-vip-order">NEW VIP ORDER</button>
-    <button id="add-bot">+ BOT</button>
-    <button id="remove-bot">- BOT</button>
+    <center>
+        <h4>COOKINGBOT ORDER SYSTEM</h4>
+    </center>
+    <div id="system-container">
+        <div id="container">
+            <div>
+                <div id="pending"></div>
+                <center>
+                    <h4>PENDING ORDERS</h4>
+                    <button id="add-normal-order">NEW NORMAL ORDER</button>
+                    <br />
+                    <button id="add-vip-order">NEW VIP ORDER</button>
+                </center>
+            </div>
 
-    <div id="pending">
-        <h2>PENDING ORDERS</h2>
-    </div>
-    <div id="complete">
-        <h2>COMPLETED ORDERS</h2>
-    </div>
-    <div id="bots">
-        <h2>AVAILABLE BOTS</h2>
-    </div>
+            <div>
+                <div id="complete"></div>
+                <center>
+                    <h4>COMPLETED ORDERS</h4>
+                </center>
+            </div>
 
+            <div>
+                <div id="bots"></div>
+                <center>
+                    <h4>AVAILABLE BOTS</h4>
+                    <button id="add-bot">+ BOT</button>
+                    <br />
+                    <button id="remove-bot">- BOT</button>
+                </center>
+            </div>
+        </div>
+    </div>
     <script type="module" src="./js/main.js"></script>
 
 </body>
