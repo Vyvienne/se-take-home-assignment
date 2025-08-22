@@ -7,13 +7,16 @@ Link: https://vyvienne.github.io/se-take-home-assignment
   <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat" />
 </div>
 
-
 ### Features
-- Add New Normal Order
-- Add New VIP Order
-- Add Cooking Bot
-- Remove Cooking Bot
-<br/>
+- **Add New Normal Order** -> Creates a new order in the Pending area.  
+- **Add New VIP Order** -> Creates a VIP order that is prioritized ahead of normal orders.  
+- **Cooking Bots**  
+  - Add a bot to automatically process pending orders.  
+  - Bots move orders from Pending to Completed after 10 seconds.  
+  - Idle bots wait for new orders when none are available.  
+- **Manage Bots**  
+  - Add multiple bots to process orders in parallel.  
+  - Remove the newest bot, but if it was processing, the order goes back to Pending.  
 
 ### Navigation and Guide
 <img src="./asset/navigation_and_guide.png" width="600"/>  
