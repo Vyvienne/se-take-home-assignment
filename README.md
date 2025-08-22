@@ -1,4 +1,6 @@
 ## CookingBot Order System
+Link: https://vyvienne.github.io/se-take-home-assignment
+
 <div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
   <img src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat" />
   <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=css&logoColor=white&style=flat" />
