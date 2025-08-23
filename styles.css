@@ -1,11 +1,15 @@
 html,
-body,
-h4 {
-    background: #944D00;
+body {
+    background: #792B1C;
     color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 200;
     font-size: 18px;
+}
+
+h3 {
+    margin: 10px;
+    padding: 20px;
 }
 
 #system-container {
@@ -25,7 +29,7 @@ h4 {
 #pending,
 #complete,
 #bots {
-    background: #A7A7A7;
+    background: white;
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
@@ -33,8 +37,16 @@ h4 {
     min-width: 300px;
     max-height: 420px;
     max-width: 300px;
-    /* prevent overflow */
     overflow-y: auto;
+    box-shadow: 0 4px 10px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pending:hover,
+#complete:hover,
+#bots:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px black;
 }
 
 #add-normal-order,
@@ -43,13 +55,14 @@ h4 {
 #remove-bot {
     background: #6BB2FF;
     color: white;
-    border: 1px solid grey;
     padding: 5px;
     margin: 5px;
     min-height: 50px;
     min-width: 300px;
+    border: 2px solid #0450a1;
     border-radius: 10px;
     font-size: 18px;
+    transition: transform 0.2s ease;
 }
 
 #add-normal-order:hover,
@@ -57,39 +70,78 @@ h4 {
 #add-bot:hover,
 #remove-bot:hover {
     background: #1f3e8e;
+    transform: scale(1.05);
 }
 
 .order,
 .bot {
     padding: 10px;
-    margin: 5px;
+    margin: 15px;
+    border: 2px solid grey;
     border-radius: 10px;
+    box-shadow: 0 3px 3px darkgray;
     max-height: 50px;
     max-width: 300px;
     text-align: center;
 }
 
 .order.pending {
-    background: #D9D9D9;
+    background: #FFCD98;
     color: black;
 }
 
 .order.processing {
-    background: #FFFF00;
+    background: #FFDD42;
     color: black;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
 }
 
 .order.completed {
-    background: #00FF5E;
+    background: #A8E008;
     color: black;
 }
 
 .bot.busy {
-    background: #FF0000;
+    background: #EA0802;
     color: black;
+    font-weight: bold;
+    animation: shake 1s infinite;
 }
 
 .bot.idle {
-    background: #FF7300;
+    background: #FFCD98;
     color: black;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px red;
+    }
+
+    50% {
+        box-shadow: 0 0 20px yellow;
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
 }
