@@ -49,7 +49,7 @@ export class SystemManager {
             element.className = "bot";
             if (b.isBusy) {
                 element.classList.add("busy");
-                element.textContent = `BOT #${b.id} (BUSY)`;
+                element.textContent = `BOT #${b.id} (BUSY) left ${b.timeoutSecs} second(s)`;
             }
             else {
                 element.classList.add("idle");

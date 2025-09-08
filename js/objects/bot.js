@@ -7,6 +7,7 @@ export class Bot {
         this.isBusy = false;
         this.order = null;
         this.timer = null;
+        this.timeoutSecs = 10;
     }
 
     assignOrder(order) {
@@ -14,8 +15,19 @@ export class Bot {
             this.isBusy = true;
             this.order = order;
             order.status = OrderStatus.PROCESSING;
+            this.timeoutSecs = 10;
 
             const timeOut = 10000; //10 secs
+            const timer = setInterval(() => {
+                if (this.timeoutSecs > 0) {
+                    this.timeoutSecs--;
+                    this.system.render();
+                    this.system.assignOrders();
+                } else {
+                    clearInterval(timer);
+                }
+            }, 1000);
+
             this.timer = setTimeout(() => {
                 order.status = OrderStatus.COMPLETE;
                 this.isBusy = false;
