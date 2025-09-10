@@ -19,7 +19,7 @@ Link: https://vyvienne.github.io/se-take-home-assignment
   - Remove the newest bot, but if it was processing, the order goes back to Pending.  
 
 ### Interface Overview
-<img src="./asset/navigation_and_guide.png" width="600"/>  
+<img src="./src/assets/navigation_and_guide.png" width="600"/>  
 
 1. This is the area that shows all pending and processing orders. 
 2. This is the area that shows all pending and completed orders.
@@ -36,7 +36,7 @@ Link: https://vyvienne.github.io/se-take-home-assignment
 
 **McDonald Color Palette**  
 <br/>
-<img src="./asset/mcdonalds_burger_color_palette.png" width="600"/>  
+<img src="./src/assets/mcdonalds_burger_color_palette.png" width="600"/>  
 *The color palette for the target customer, McDonald's*
 [Source](https://www.schemecolor.com/mcdonalds-burger-color-palette.php)
 
@@ -44,17 +44,17 @@ Link: https://vyvienne.github.io/se-take-home-assignment
 
 **UI Design (Figma)**  
 <br/>
-<img src="./asset/ui_design.png" width="600"/>  
+<img src="./src/assets/ui_design.png" width="600"/>  
 *This is the initial UI mockup*
 <br/>
-<img src="./asset/refined_ui_design.png" width="600"/>  
+<img src="./src/assets/refined_ui_design.png" width="600"/>  
 *This is the refined UI design after applying McDonald's color palette*
 <br/>
 [View UI Design on Figma](https://www.figma.com/design/nme8PYrXDRU8C6xlA7H4EL/FeedMe?node-id=0-1&t=zVPh4efur1SM4amj-1)
 
 **Class Diagram (draw.io)**  
 <br/>
-<img src="./asset/class_diagram.png" width="600"/>  
+<img src="./src/assets/class_diagram.png" width="600"/>  
 *The relationship between orders, bots, and system*
 [View Class Diagram on draw.io](https://drive.google.com/file/d/12zSYeIzdkkMp3QczAnlS6P3vISCX_QhL/view?usp=drive_link)
 
