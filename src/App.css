@@ -1,42 +1,154 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html,
+body {
+  background: #792B1C;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+h3 {
+  margin: 10px;
+  padding: 20px;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#system-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#pending,
+#complete,
+#bots {
+  background: white;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  min-height: 420px;
+  min-width: 300px;
+  max-height: 420px;
+  max-width: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pending:hover,
+#complete:hover,
+#bots:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px black;
+}
+
+#add-normal-order,
+#add-vip-order,
+#add-bot,
+#remove-bot {
+  background: #6BB2FF;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  min-height: 50px;
+  min-width: 300px;
+  border: 2px solid #0450a1;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+#add-normal-order:hover,
+#add-vip-order:hover,
+#add-bot:hover,
+#remove-bot:hover {
+  background: #1f3e8e;
+  transform: scale(1.05);
+}
+
+.order,
+.bot {
+  padding: 10px;
+  margin: 15px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px darkgray;
+  max-height: 50px;
+  max-width: 300px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.order.pending {
+  background: #FFCD98;
+  color: black;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.order.processing {
+  background: #FFDD42;
+  color: black;
+  font-weight: bold;
+  animation: pulse 1.5s infinite;
+}
+
+.order.completed {
+  background: #A8E008;
+  color: black;
+}
+
+.bot.busy {
+  background: #EA0802;
+  color: black;
+  font-weight: bold;
+  animation: shake 1s infinite;
+}
+
+.bot.idle {
+  background: #FFCD98;
+  color: black;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px red;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    box-shadow: 0 0 20px yellow;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
   }
-}
 
-.card {
-  padding: 2em;
-}
+  25% {
+    transform: translateX(-2px);
+  }
 
-.read-the-docs {
-  color: #888;
+  50% {
+    transform: translateX(2px);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
 }
